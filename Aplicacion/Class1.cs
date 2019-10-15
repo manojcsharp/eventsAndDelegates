@@ -9,7 +9,7 @@ namespace Aplicacion
     {
         public void Suscribe(Clock theClock)
         {
-            theClock.FifteenChange += new Clock.FifteenChangeHandler(OnFifteenChange);
+            theClock.FifteenChange += new Clock.EventHandler(OnFifteenChange);
         }
 
         public void OnFifteenChange(Object o, TimeInfoEventArgs e)

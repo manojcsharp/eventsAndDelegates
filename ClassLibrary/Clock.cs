@@ -19,16 +19,17 @@ namespace ClassLibrary
         // any method that takes a clock object and a TimeInfoEventArgs
         // object as the parameter and returns no value. It's the
         // delegate the subscribers must implement.
-        public delegate void SecondChangeHandler(
+        public delegate void EventHandler(
            object clock,
            TimeInfoEventArgs timeInformation
         );
 
         // The event we publish
-        public event SecondChangeHandler SecondChange;
+        public event EventHandler SecondChange;
         
-        public delegate void FifteenChangeHandler(object clock, TimeInfoEventArgs timeInformation);
-        public event FifteenChangeHandler FifteenChange;
+        
+
+        public event EventHandler FifteenChange;
        
         
             
@@ -41,6 +42,7 @@ namespace ClassLibrary
                 FifteenChange(clock, timeInformation);
             }
         }
+
 
         // The method which fires the Event
         protected void OnSecondChange(

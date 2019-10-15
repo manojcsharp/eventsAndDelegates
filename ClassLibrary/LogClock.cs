@@ -8,7 +8,7 @@ namespace ClassLibrary
         public void Subscribe(Clock theClock)
         {
             theClock.SecondChange +=
-                new Clock.SecondChangeHandler(WriteLogEntry);
+                new Clock.EventHandler(WriteLogEntry);
         }
 
         // This method should write to a file

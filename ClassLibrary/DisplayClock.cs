@@ -13,7 +13,7 @@ namespace ClassLibrary
         public void Subscribe(Clock theClock)
         {
             theClock.SecondChange +=
-                new Clock.SecondChangeHandler(TimeHasChanged);
+                new Clock.EventHandler(TimeHasChanged);
         }
 
         // The method that implements the
