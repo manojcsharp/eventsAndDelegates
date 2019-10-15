@@ -26,6 +26,20 @@ namespace ClassLibrary
 
         // The event we publish
         public event SecondChangeHandler SecondChange;
+        public delegate void FifteenChangeHandler(object clock, TimeInfoEventArgs timeInformation);
+        public event FifteenChangeHandler FifteenChange;
+
+
+            
+            
+        protected void OnFifteenChange(
+            object clock, TimeInfoEventArgs timeInformation)
+        {
+            if (FifteenChange != null)
+            {
+                FifteenChange(clock, timeInformation);
+            }
+        }
 
         // The method which fires the Event
         protected void OnSecondChange(
@@ -45,6 +59,8 @@ namespace ClassLibrary
         // event for each new second
         public void Run()
         {
+            int contador = 0;
+
             for (; ; )
             {
                 // Sleep 1 Second
@@ -65,7 +81,14 @@ namespace ClassLibrary
 
                     // If anyone has subscribed, notify them
                     OnSecondChange(this, timeInformation);
+                    contador++;
+                    if (contador >= 15)
+                    {
+                        OnFifteenChange(this, timeInformation);
+                        contador = 0;
+                    }
                 }
+                
 
                 // update the state
                 _second = dt.Second;

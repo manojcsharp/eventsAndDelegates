@@ -14,6 +14,8 @@ namespace Aplicacion
             // subscribe to the clock just created
             DisplayClock dc = new DisplayClock();
             dc.Subscribe(theClock);
+            DisplayFifteenChange displayFifteen = new DisplayFifteenChange();
+            displayFifteen.Suscribe(theClock);
 
             // Create a Log object and tell it
             // to subscribe to the clock
