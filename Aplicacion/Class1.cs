@@ -12,7 +12,7 @@ namespace Aplicacion
             theClock.FifteenChange += new Clock.FifteenChangeHandler(OnFifteenChange);
         }
 
-        public void OnFifteenChange(Object o, EventArgs e)
+        public void OnFifteenChange(Object o, TimeInfoEventArgs e)
         {
             Console.WriteLine("15 Segundos");
         }

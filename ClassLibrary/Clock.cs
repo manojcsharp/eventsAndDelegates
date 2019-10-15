@@ -26,10 +26,11 @@ namespace ClassLibrary
 
         // The event we publish
         public event SecondChangeHandler SecondChange;
+        
         public delegate void FifteenChangeHandler(object clock, TimeInfoEventArgs timeInformation);
         public event FifteenChangeHandler FifteenChange;
-
-
+       
+        
             
             
         protected void OnFifteenChange(
